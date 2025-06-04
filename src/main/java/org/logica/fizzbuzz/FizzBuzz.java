@@ -1,4 +1,4 @@
-package org.logica;
+package org.logica.fizzbuzz;
 
 public class FizzBuzz {
 

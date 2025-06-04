@@ -1,5 +1,6 @@
 package org.logica;
-
+import org.logica.anagrama.Anagrama;
+import org.logica.fizzbuzz.FizzBuzz;
 import java.util.Scanner;
 
 public class Main {
@@ -34,6 +35,7 @@ public class Main {
 
             do {
                 System.out.println(menu);
+                System.out.println(" ------------------------------------------");
                 opcion = entrada.nextInt();
                 String descripcion;
 
@@ -60,6 +62,24 @@ public class Main {
                         break;
 
                     case 2:
+
+                        descripcion = """
+                                Escribe una función que reciba dos palabras (String) y retorne
+                                verdadero o falso (Bool) según sean o no anagramas.
+                                Un Anagrama consiste en formar una palabra reordenando TODAS
+                                las letras de otra palabra inicial.
+                                NO hace falta comprobar que ambas palabras existan.
+                                Dos palabras exactamente iguales no son anagrama.
+                                """;
+
+                        System.out.println(descripcion);
+                        Anagrama anagrama = new Anagrama();
+
+                        System.out.println("Palabras que no son anagrama hola y mora retornara false");
+                        System.out.println(anagrama.anagrama("Hola", "Mora"));
+
+                        System.out.println("Palabras que son anagrama amor y mora retornara true");
+                        System.out.println(anagrama.anagrama("amor", "mora"));
 
                         break;
 
