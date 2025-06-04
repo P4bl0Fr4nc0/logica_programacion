@@ -1,6 +1,8 @@
 package org.logica;
 import org.logica.anagrama.Anagrama;
 import org.logica.fizzbuzz.FizzBuzz;
+import org.logica.sucesionfibonacci.SucesionFibonacci;
+
 import java.util.Scanner;
 
 public class Main {
@@ -34,6 +36,7 @@ public class Main {
             int opcion;
 
             do {
+                System.out.println(" ------------------------------------------");
                 System.out.println(menu);
                 System.out.println(" ------------------------------------------");
                 opcion = entrada.nextInt();
@@ -82,6 +85,31 @@ public class Main {
                         System.out.println(anagrama.anagrama("amor", "mora"));
 
                         break;
+                    case 3:
+                        descripcion = """
+                                Escribe un programa que imprima los 50 primeros números de la sucesión
+                                de Fibonacci empezando en 0.
+                                La serie Fibonacci se compone por una sucesión de números en
+                                la que el siguiente siempre es la suma de los dos anteriores.
+                                0, 1, 1, 2, 3, 5, 8, 13...
+                                """;
+
+                        System.out.println(descripcion);
+
+                        SucesionFibonacci sucesionFibonacci = new SucesionFibonacci();
+                        // Se agregan los 50 numeros de la sucesion con un for y se le pasan los parametros a la funcion.
+
+                        for (int i = 0; i<= 50; i++){
+                            System.out.println(sucesionFibonacci.sucesionfibonacci(i));
+                        }
+
+
+                        break;
+
+
+                    default:
+                        System.out.println("Opcion no valida");
+                        break;
 
                 }
             }
@@ -91,8 +119,6 @@ public class Main {
             System.out.println("Opcion no valida");
 
         }
-
-
 
         }
 }
