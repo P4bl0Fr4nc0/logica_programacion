@@ -1,6 +1,7 @@
 package org.logica;
 import org.logica.anagrama.Anagrama;
 import org.logica.fizzbuzz.FizzBuzz;
+import org.logica.numerosprimos.NumerosPrimos;
 import org.logica.sucesionfibonacci.SucesionFibonacci;
 
 import java.util.Scanner;
@@ -106,6 +107,23 @@ public class Main {
 
                         break;
 
+                    case 4:
+                        descripcion = """
+                                Eribe un programa que se encargue de comprobar si un número es o no primo.
+                                Hecho esto, imprime los números primos entre 1 y 100.
+                                """;
+                        System.out.println(descripcion);
+
+                        NumerosPrimos numerosPrimos = new NumerosPrimos();
+                        for (int i = 0; i<= 100; i++){
+                            if (numerosPrimos.primo(i)){
+                                System.out.println("El numero "+ i +" es numero primo");
+                            }
+                            else {
+                                System.out.println("El numero " + i + " no es numero primo");
+                            }
+                        }
+                        break;
 
                     default:
                         System.out.println("Opcion no valida");
