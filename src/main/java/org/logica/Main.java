@@ -1,6 +1,8 @@
 package org.logica;
 import org.logica.anagrama.Anagrama;
+import org.logica.areapoligono.AreaPoligono;
 import org.logica.fizzbuzz.FizzBuzz;
+import org.logica.invertircadena.InvertirCadena;
 import org.logica.numerosprimos.NumerosPrimos;
 import org.logica.sucesionfibonacci.SucesionFibonacci;
 
@@ -124,6 +126,73 @@ public class Main {
                             }
                         }
                         break;
+
+                    case 5:
+                        descripcion = """
+                                Crea una única función (importante que sólo sea una) que sea capaz
+                                de calcular y retornar el área de un polígono.
+                                La función recibirá por parámetro sólo UN polígono a la vez.
+                                Los polígonos soportados serán Triángulo, Cuadrado y Rectángulo.
+                                Imprime el cálculo del área de un polígono de cada tipo.
+                                """;
+
+                        System.out.println(descripcion);
+                        System.out.println(""" 
+                                Selecciona el tipo de poligono que quieres calcular su area
+                                1.Cuadrado o rectangulo.
+                                2.Circulo.
+                                """);
+                        int figura = entrada.nextInt();
+
+
+                        AreaPoligono areaPoligono = new AreaPoligono();
+
+
+                        if (figura == 1){
+
+                            System.out.println("Ingrese el largo");
+                            double largo = entrada.nextDouble();
+                            System.out.println("Ingrese ancho");
+                            double ancho = entrada.nextDouble();
+
+                            System.out.println("El area del poligono es " + areaPoligono.areaPoligono(figura,largo,ancho));
+
+                        }
+                        if ( figura ==2){
+                            System.out.println("Ingrese el base");
+                            double largo = entrada.nextDouble();
+                            System.out.println("Ingrese altura");
+                            double ancho = entrada.nextDouble();
+
+                            System.out.println("El area del poligono es " + areaPoligono.areaPoligono(figura,largo,ancho));
+                        }
+                        break;
+
+                    case 6:
+                        descripcion = """
+                                Crea un programa que invierta el orden de una cadena de texto
+                                sin usar funciones propias del lenguaje que lo hagan de forma automática.
+                                Si le pasamos "Hola mundo" nos retornaría "odnum aloH"
+                                """;
+
+                        System.out.println(descripcion);
+
+                        String palabra;
+                        Scanner entrada2 = new Scanner(System.in);
+                        System.out.println("Inserta la palabra que quieres invertir: ");
+                        palabra = entrada2.nextLine();
+
+                        InvertirCadena invertirCadena = new InvertirCadena();
+                        String invertido = new String(invertirCadena.cadena(palabra));
+
+                        System.out.println("Tu palabra invertida es: " + invertido);
+
+                        break;
+
+
+
+
+
 
                     default:
                         System.out.println("Opcion no valida");
