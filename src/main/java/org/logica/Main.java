@@ -1,6 +1,8 @@
 package org.logica;
 import org.logica.anagrama.Anagrama;
 import org.logica.areapoligono.AreaPoligono;
+import org.logica.contarpalabras.ContarPalabras;
+import org.logica.decimalbinario.DecimalaBinario;
 import org.logica.fizzbuzz.FizzBuzz;
 import org.logica.invertircadena.InvertirCadena;
 import org.logica.numerosprimos.NumerosPrimos;
@@ -189,7 +191,41 @@ public class Main {
 
                         break;
 
+                    case 7:
 
+                        descripcion = """
+                                Este texto es una prueba para ver cuantas veces se repite
+                                cada palabra y las cuente con la funcion creada en la clase
+                               contar palabras, las mayusculas pasaran como minusculas.
+                               """;
+
+                        System.out.println(descripcion);
+                        Scanner entrada3 = new Scanner(System.in);
+                        System.out.println("Ingrese un texto");
+                        String texto = entrada3.nextLine();
+
+                        ContarPalabras contarPalabras = new ContarPalabras();
+                        contarPalabras.conteopalabras(texto);
+
+                        break;
+
+                    case 8:
+
+                        descripcion= """
+                                Crea un programa se encargue de transformar un número
+                                decimal a binario sin utilizar funciones propias del lenguaje que lo hagan directamente.
+                                """;
+                        System.out.println(descripcion);
+
+                        Scanner entrada4 = new Scanner(System.in);
+                        System.out.println("Ingresa un numero que desees convertir a binario");
+                        int numero = entrada4.nextInt();
+
+                        DecimalaBinario decimalaBinario = new DecimalaBinario();
+                        decimalaBinario.binario(numero);
+
+
+                        break;
 
 
 
