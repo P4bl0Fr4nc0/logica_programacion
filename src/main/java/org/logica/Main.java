@@ -1,21 +1,22 @@
 package org.logica;
 import org.logica.anagrama.Anagrama;
 import org.logica.areapoligono.AreaPoligono;
+import org.logica.codigomorse.CodigoMorse;
 import org.logica.contarpalabras.ContarPalabras;
 import org.logica.decimalbinario.DecimalaBinario;
+import org.logica.expresionesequilibradas.ExpresionesEquilibradas;
+import org.logica.factorialrecursivo.Factorialrecursivo;
 import org.logica.fizzbuzz.FizzBuzz;
 import org.logica.invertircadena.InvertirCadena;
 import org.logica.numerosprimos.NumerosPrimos;
+import org.logica.palindromo.Palindromo;
 import org.logica.sucesionfibonacci.SucesionFibonacci;
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-
         // Menu
-
 
         String menu = """
                Ejercicios logica de programacion, elige una opcion de menú.
@@ -227,7 +228,109 @@ public class Main {
 
                         break;
 
+                    case 9:
 
+                        descripcion = """
+                                Crea un programa que sea capaz de transformar texto natural a código
+                                 morse y viceversa.
+                                 Debe detectar automáticamente de qué tipo se trata y realizar
+                                 la conversión.
+                                 En morse se soporta raya "—", punto ".", un espacio " " entre letras
+                                 o símbolos y dos espacios entre palabras "  ".
+                                 El alfabeto morse soportado será el mostrado en
+                                 https://es.wikipedia.org/wiki/Código_morse.
+                                """;
+
+                        System.out.println(descripcion);
+
+                        CodigoMorse codigoMorse = new CodigoMorse();
+
+                        System.out.println("""
+                                ingresa la opcion que deseas:
+                                1. Texto a morse.
+                                2. Morse a texto
+                                """);
+
+                        Scanner entrada5 = new Scanner(System.in);
+                        int eleccion = entrada5.nextInt();
+
+                        if ( eleccion == 1 ){
+                            Scanner entrada6  = new Scanner(System.in);
+                            System.out.println("Ingresa el texto que quieres pasar a morse: ");
+                            String textoascii = entrada6.nextLine();
+                            System.out.println(codigoMorse.textoamorse(textoascii));
+                        }
+
+                        if (eleccion == 2){
+                            Scanner entrada7  = new Scanner(System.in);
+                            System.out.println("Ingresa el codigo morse que quieres pasar a texto: ");
+                            String textomorse = entrada7.nextLine();
+                            System.out.println(codigoMorse.morseatexto(textomorse));
+                        }
+
+                        else {
+                            System.out.println("Opcion no valida");
+                        }
+
+                        break;
+
+                    case 10:
+                      descripcion= """
+                              Crea un programa que comprueba si los paréntesis, llaves y corchetes
+                               de una expresión están equilibrados.
+                               Equilibrado significa que estos delimitadores se abren y cieran
+                               en orden y de forma correcta.
+                               Paréntesis, llaves y corchetes son igual de prioritarios.
+                               No hay uno más importante que otro.
+                               Expresión balanceada: { [ a * ( c + d ) ] - 5 }
+                               Expresión no balanceada: { a * ( c + d ) ] - 5 }
+                              """;
+                        System.out.println(descripcion);
+                        ExpresionesEquilibradas expresionesEquilibradas = new ExpresionesEquilibradas();
+                        String expresion = "(a+b)*[c-d";
+                        boolean resultado  =  expresionesEquilibradas.expresionequilabrada(expresion);
+                        if (resultado){
+                            System.out.println("La expresion "+ expresion +" es equilibrada");
+                        }
+                        else {
+                            System.out.println("La expresion " + expresion + " no es equilibrada");
+                        }
+
+                            break;
+
+                    case 11:
+                        descripcion = """
+                                Un Palíndromo es una palabra o expresión que es igual si se lee
+                                de izquierda a derecha que de derecha a izquierda.
+                                NO se tienen en cuenta los espacios, signos de puntuación y tildes.
+                                Ejemplo: Ana lleva al oso la avellana.
+                                """;
+                        System.out.println(descripcion);
+
+                        Palindromo palindromo = new Palindromo();
+                        palindromo.espalindromo("Ana lleva al oso la avellana");
+                        palindromo.espalindromo("Hola como estas");
+
+                        break;
+
+                    case 12:
+
+                        descripcion = """
+                                Escribe una función que calcule y retorne el factorial de un número dado
+                                de forma recursiva.
+                                """;
+
+                        System.out.println(descripcion);
+                        Factorialrecursivo factorialrecursivo = new Factorialrecursivo();
+
+                        Scanner entrada8 = new Scanner(System.in);
+                        long num;
+                        System.out.println("ingresa un numero: ");
+                        num = entrada8.nextLong();
+
+                        System.out.println(factorialrecursivo.factorial(num));
+
+                        break;
 
 
                     default:
