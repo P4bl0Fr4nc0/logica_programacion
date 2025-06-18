@@ -4,6 +4,7 @@ import org.logica.areapoligono.AreaPoligono;
 import org.logica.codigomorse.CodigoMorse;
 import org.logica.contarpalabras.ContarPalabras;
 import org.logica.decimalbinario.DecimalaBinario;
+import org.logica.diastranscurridos.DiasTranscurridos;
 import org.logica.expresionesequilibradas.ExpresionesEquilibradas;
 import org.logica.factorialrecursivo.Factorialrecursivo;
 import org.logica.fizzbuzz.FizzBuzz;
@@ -12,6 +13,9 @@ import org.logica.numeroamstrong.NumeroAmstrong;
 import org.logica.numerosprimos.NumerosPrimos;
 import org.logica.palindromo.Palindromo;
 import org.logica.sucesionfibonacci.SucesionFibonacci;
+
+
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class Main {
@@ -34,10 +38,14 @@ public class Main {
                11. Palindromo.
                12. Factorial.
                13.Numero de amstrong
-               14.Salir.
+               14.Dias entre dos fechas
+               15
+               16
+               17
+               18.Salir.
                """;
 
-       /// try {
+        try {
 
             Scanner entrada = new Scanner(System.in);
             int opcion;
@@ -354,6 +362,40 @@ public class Main {
 
                         break;
 
+                    case 14:
+                        descripcion = """
+                                Crea una función que calcule y retorne cuántos días hay entre dos cadenas
+                                de texto que representen fechas.
+                                Una cadena de texto que representa una fecha tiene el formato "dd/MM/yyyy".
+                                La función recibirá dos String y retornará un Int.
+                                La diferencia en días será absoluta (no importa el orden de las fechas).
+                                Si una de las dos cadenas de texto no representa una fecha correcta se
+                                lanzará una excepción.
+                                """;
+
+                        System.out.println(descripcion);
+
+                        Scanner entradafecha1  = new Scanner(System.in);
+                        Scanner entradafecha2  = new Scanner(System.in);
+
+                        System.out.println("Ingrese la primera fecha dd-mm-aaaa");
+                        String fecha1 = entradafecha1.next();
+
+                        System.out.println("Ingrese la segunda fecha dd-mm-aaaa");
+                        String fecha2 = entradafecha2.next();
+
+
+                        try {
+
+
+                            DiasTranscurridos diasTranscurridos = new DiasTranscurridos();
+                            System.out.println("Han transcurrido: " + diasTranscurridos.diastranscurridos(fecha1,fecha2) + " dias");
+
+                        }
+                        catch (DateTimeParseException e){
+                            System.out.println("Formato de fecha ivalido: Utilice dd-mm-aaaa");
+                        }
+                        break;
 
                     default:
                         System.out.println("Sin opcion");
@@ -362,11 +404,11 @@ public class Main {
                 }
             }
             while (opcion != 14);
-       // }
-      //  catch (Exception e){
-         //   System.out.println("Opcion no valida");
+        }
+       catch (Exception e){
+            System.out.println("Ocurrio algun problema" + e);
 
-       // }
+        }
 
         }
 }
