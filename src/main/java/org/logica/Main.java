@@ -8,6 +8,7 @@ import org.logica.expresionesequilibradas.ExpresionesEquilibradas;
 import org.logica.factorialrecursivo.Factorialrecursivo;
 import org.logica.fizzbuzz.FizzBuzz;
 import org.logica.invertircadena.InvertirCadena;
+import org.logica.numeroamstrong.NumeroAmstrong;
 import org.logica.numerosprimos.NumerosPrimos;
 import org.logica.palindromo.Palindromo;
 import org.logica.sucesionfibonacci.SucesionFibonacci;
@@ -32,11 +33,11 @@ public class Main {
                10. Expresiones equilibradas.
                11. Palindromo.
                12. Factorial.
-               13.
+               13.Numero de amstrong
                14.Salir.
                """;
 
-        try {
+       /// try {
 
             Scanner entrada = new Scanner(System.in);
             int opcion;
@@ -332,19 +333,40 @@ public class Main {
 
                         break;
 
+                    case 13:
+                        descripcion= """
+                                Escribe una función que calcule si un número dado es un número de Armstrong
+                                (o también llamado narcisista).
+                                
+                                """;
+
+                        System.out.println(descripcion);
+
+
+                        Scanner entrada9 = new Scanner(System.in);
+
+                        System.out.println("Ingresa un numero entero;");
+                        int numero1 = entrada9.nextInt();
+
+                        NumeroAmstrong numeroAmstrong = new NumeroAmstrong();
+
+                        numeroAmstrong.numeroAmstorng(numero1);
+
+                        break;
+
 
                     default:
-                        System.out.println("Opcion no valida");
+                        System.out.println("Sin opcion");
                         break;
 
                 }
             }
             while (opcion != 14);
-        }
-        catch (Exception e){
-            System.out.println("Opcion no valida");
+       // }
+      //  catch (Exception e){
+         //   System.out.println("Opcion no valida");
 
-        }
+       // }
 
         }
 }
