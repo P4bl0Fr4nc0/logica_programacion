@@ -3,6 +3,7 @@ import org.logica.anagrama.Anagrama;
 import org.logica.areapoligono.AreaPoligono;
 import org.logica.codigomorse.CodigoMorse;
 import org.logica.contarpalabras.ContarPalabras;
+import org.logica.convertiramayusculas.ConvertirMayusculas;
 import org.logica.decimalbinario.DecimalaBinario;
 import org.logica.diastranscurridos.DiasTranscurridos;
 import org.logica.expresionesequilibradas.ExpresionesEquilibradas;
@@ -37,9 +38,9 @@ public class Main {
                10. Expresiones equilibradas.
                11. Palindromo.
                12. Factorial.
-               13.Numero de amstrong
-               14.Dias entre dos fechas
-               15
+               13. Numero de amstrong.
+               14. Dias entre dos fechas.
+               15. Convertir a mayúsculas.
                16
                17
                18.Salir.
@@ -397,11 +398,46 @@ public class Main {
                         }
                         break;
 
+
+                    case 15:
+
+                        descripcion = """
+                                Crea una función que reciba un String de cualquier tipo y se encargue de
+                                poner en mayúscula la primera letra de cada palabra.
+                                No se pueden utilizar operaciones del lenguaje que
+                                lo resuelvan directamente.
+                                """;
+
+                        System.out.println(descripcion);
+
+                        Scanner entrada10 = new Scanner(System.in);
+
+                        System.out.println("Ingrese un texto: ");
+                        String texto2 = entrada10.nextLine();
+
+                        System.out.println("Tu texto con mayuscula de la primera palabra es :");
+
+                        ConvertirMayusculas convertirMayusculas = new ConvertirMayusculas();
+
+                        convertirMayusculas.convertirmayusculas(texto2);
+
+
+
+
+
+                        break;
+
                     default:
                         System.out.println("Sin opcion");
                         break;
 
+
+
+
+
                 }
+
+
             }
             while (opcion != 14);
         }
